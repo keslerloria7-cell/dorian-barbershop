@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dorian Barbershop | Laberinto, Paquera, Puntarenas</title>
+<meta name="description" content="Barbería profesional en Laberinto, Paquera, Puntarenas. Cortes, barba y más. Abierto todos los días excepto miércoles de 7am a 9pm. Reservá tu cita en línea.">
+<meta name="keywords" content="barbería Paquera, barbería Puntarenas, corte de cabello Paquera, Dorian Barbershop, barber Laberinto">
+<meta property="og:title" content="Dorian Barbershop — Laberinto, Paquera">
+<meta property="og:description" content="Cortes profesionales, barba y más. Reservá tu cita online.">
+<meta property="og:type" content="business.business">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dark: #8B6914;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --dark3: #222222;
+    --gray: #888888;
+    --light: #F5F0E8;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--black);
+    color: var(--light);
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 1.2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .nav-logo span { color: var(--white); }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+  .nav-wa {
+    color: #25D366 !important;
+    border: 1px solid rgba(37,211,102,0.4);
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    transition: all 0.3s !important;
+  }
+  .nav-wa:hover { background: rgba(37,211,102,0.1) !important; color: #25D366 !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 60px,
+        rgba(201,168,76,0.03) 60px,
+        rgba(201,168,76,0.03) 61px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(201,168,76,0.03) 60px,
+        rgba(201,168,76,0.03) 61px
+      );
+  }
+
+  .hero-deco {
+    position: absolute;
+    width: 500px; height: 500px;
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 50%;
+    right: -100px; top: 50%;
+    transform: translateY(-50%);
+    animation: rotateDeco 30s linear infinite;
+  }
+
+  .hero-deco::before {
+    content: '';
+    position: absolute; inset: 40px;
+    border: 1px solid rgba(201,168,76,0.08);
+    border-radius: 50%;
+  }
+
+  @keyframes rotateDeco { to { transform: translateY(-50%) rotate(360deg); } }
+
+  .hero-content {
+    text-align: center;
+    position: relative; z-index: 3;
+    animation: fadeUp 1s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title .gold { color: var(--gold); display: block; }
+
+  .hero-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.9rem 2.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none; cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    padding: 0.9rem 2.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+
+  .btn-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
+
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: var(--gray); font-size: 0.65rem; letter-spacing: 3px;
+  }
+
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 2rem; }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .section-line {
+    width: 50px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 3rem;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* ── PRECIOS ── */
+  #precios { background: var(--dark); }
+
+  .prices-header { text-align: center; margin-bottom: 4rem; }
+  .prices-header .section-line { margin: 0 auto 3rem; }
+
+  .prices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .price-card {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .price-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .price-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+  .price-card:hover::before { opacity: 1; }
+
+  .price-card.featured {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, var(--dark2), rgba(201,168,76,0.08));
+    box-shadow: 0 0 40px rgba(201,168,76,0.12);
+  }
+
+  .price-card.featured::before { opacity: 1; }
+
+  .featured-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+  }
+
+  .price-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .price-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-desc {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .price-amount span { font-size: 1rem; color: var(--gray); }
+
+  .price-duration {
+    font-size: 0.7rem;
+    color: var(--gray);
+    letter-spacing: 1px;
+    margin-top: 0.3rem;
+  }
+
+  /* ── DISPONIBILIDAD ── */
+  #disponibilidad { background: var(--black); }
+
+  .availability-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .availability-grid { grid-template-columns: 1fr; }
+  }
+
+  .calendar-widget {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+
+  .cal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .cal-month {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+  }
+
+  .cal-nav {
+    background: none; border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold); width: 32px; height: 32px;
+    cursor: pointer; border-radius: 2px;
+    font-size: 1rem; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .cal-nav:hover { background: rgba(201,168,76,0.1); }
+
+  .cal-days-header {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    text-align: center; margin-bottom: 0.5rem;
+  }
+
+  .cal-days-header span {
+    font-size: 0.65rem; color: var(--gold);
+    letter-spacing: 1px; padding: 0.3rem 0;
+  }
+
+  .cal-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+  }
+
+  .cal-day {
+    aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; border-radius: 2px;
+    cursor: pointer; transition: all 0.2s;
+    position: relative;
+  }
+
+  .cal-day:hover:not(.empty):not(.past) { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .cal-day.empty { cursor: default; }
+  .cal-day.past { color: #333; cursor: not-allowed; }
+  .cal-day.past[title] { color: #444; position: relative; }
+  .cal-day.closed-wed { color: #553333 !important; background: rgba(180,50,50,0.06); }
+  .cal-day.today { color: var(--gold); font-weight: 700; }
+  .cal-day.today::after {
+    content: ''; position: absolute; bottom: 4px;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .cal-day.selected {
+    background: var(--gold); color: var(--black); font-weight: 700;
+  }
+
+  .cal-day.busy { color: #444; cursor: not-allowed; }
+  .cal-day.busy::before {
+    content: '';
+    position: absolute; inset: 4px;
+    background: rgba(255,0,0,0.1);
+    border-radius: 2px;
+  }
+
+  .slots-panel { }
+
+  .slots-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+
+  .slots-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .slot {
+    padding: 0.6rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    text-align: center;
+    font-size: 0.75rem; cursor: pointer;
+    transition: all 0.2s;
+    color: var(--light);
+  }
+
+  .slot:hover:not(.taken) { border-color: var(--gold); color: var(--gold); }
+  .slot.taken { opacity: 0.3; cursor: not-allowed; text-decoration: line-through; }
+  .slot.selected { background: var(--gold); color: var(--black); border-color: var(--gold); font-weight: 600; }
+
+  .slot-legend {
+    display: flex; gap: 1.5rem; margin-bottom: 1.5rem;
+    font-size: 0.7rem; color: var(--gray);
+  }
+
+  .legend-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block; margin-right: 4px;
+  }
+
+  /* ── CITAS ── */
+  #citas { background: var(--dark); }
+
+  .booking-form {
+    max-width: 600px; margin: 0 auto;
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+
+  .form-group { margin-bottom: 1.5rem; }
+
+  .form-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input, .form-select {
+    width: 100%; padding: 0.8rem 1rem;
+    background: var(--dark3);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    transition: border-color 0.3s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus { border-color: var(--gold); }
+  .form-select option { background: var(--dark3); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-selected-info {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 2px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--gold);
+  }
+
+  .form-selected-info span { color: var(--white); }
+
+  /* ── GALERÍA ── */
+  #galeria { background: var(--black); }
+
+  .gallery-header { margin-bottom: 3rem; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .gallery-item {
+    position: relative; overflow: hidden;
+    border-radius: 6px;
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.1);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.07); }
+
+  .gallery-item:first-child { grid-column: span 2; }
+
+  .gallery-placeholder {
+    width: 100%; aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.8rem;
+    color: var(--gray);
+  }
+
+  .gallery-item:first-child .gallery-placeholder { aspect-ratio: 16/7; }
+
+  .gallery-item:first-child img { min-height: 280px; max-height: 340px; }
+  .gallery-item:not(:first-child) img { min-height: 200px; max-height: 240px; }
+
+  .gallery-icon { font-size: 2rem; opacity: 0.4; }
+
+  .gallery-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.5; }
+
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: rgba(201,168,76,0.85);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--black);
+    font-weight: 700;
+  }
+
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.7rem; color: var(--gray);
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex; justify-content: center; gap: 2rem;
+    list-style: none; margin-bottom: 2rem;
+  }
+
+  .footer-links a {
+    color: var(--gray); text-decoration: none;
+    font-size: 0.75rem; letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy { font-size: 0.7rem; color: #333; }
+
+  /* ── MODAL CONFIRMACIÓN ── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(0,0,0,0.85);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+
+  .modal-overlay.active { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 4px;
+    padding: 2.5rem;
+    max-width: 440px; width: 90%;
+    text-align: center;
+    transform: translateY(20px); transition: transform 0.3s;
+  }
+
+  .modal-overlay.active .modal { transform: translateY(0); }
+
+  .modal-icon {
+    font-size: 3rem; margin-bottom: 1rem; display: block;
+  }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .modal-body { font-size: 0.85rem; color: var(--gray); line-height: 1.7; margin-bottom: 2rem; }
+  .modal-body strong { color: var(--white); }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 3000;
+    background: var(--gold); color: var(--black);
+    padding: 1rem 1.5rem;
+    border-radius: 2px;
+    font-size: 0.8rem; font-weight: 600;
+    transform: translateY(100px); opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ── LIGHT MODE ── */
+  body.light-mode {
+    --black: #F5F0E8;
+    --dark: #EDE8DF;
+    --dark2: #E0D9CE;
+    --dark3: #D4CBBD;
+    --gray: #666666;
+    --light: #1A1A1A;
+    --white: #0A0A0A;
+  }
+  body.light-mode nav { background: rgba(245,240,232,0.95); }
+  body.light-mode .hero-bg { filter: invert(1) hue-rotate(180deg) opacity(0.3); }
+
+  /* ── THEME TOGGLE ── */
+  .theme-toggle {
+    position: fixed; top: 1.2rem; right: 1.5rem; z-index: 1100;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold); font-size: 1rem;
+    width: 38px; height: 38px;
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s; backdrop-filter: blur(8px);
+  }
+  .theme-toggle:hover { background: rgba(201,168,76,0.3); transform: scale(1.1); }
+
+  /* ── FLOATING WHATSAPP ── */
+  .wa-float {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 2000;
+    background: #25D366;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    text-decoration: none; font-size: 1.6rem;
+    transition: all 0.3s;
+    animation: waPulse 2.5s ease-in-out infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.7); animation: none; }
+  @keyframes waPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.8), 0 0 0 8px rgba(37,211,102,0.1); }
+  }
+  .wa-float-label {
+    position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+    background: #25D366; color: white;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 1px;
+    padding: 0.4rem 0.9rem; border-radius: 20px;
+    white-space: nowrap; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .wa-float:hover .wa-float-label { opacity: 1; }
+
+  /* ── CONTADOR PRÓXIMO TURNO ── */
+  .next-slot-bar {
+    background: linear-gradient(90deg, rgba(201,168,76,0.12), rgba(201,168,76,0.06));
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    padding: 0.6rem 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--gold);
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+  }
+  .next-slot-bar span { color: var(--white); font-weight: 600; }
+  nav { top: 36px !important; }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── LISTA DE ESPERA ── */
+  .waitlist-section {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 3rem;
+    max-width: 600px;
+    margin-left: auto; margin-right: auto;
+  }
+  .waitlist-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold); font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  .waitlist-section p { color: var(--gray); font-size: 0.8rem; margin-bottom: 1.5rem; }
+  .waitlist-form { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .waitlist-form .form-input { flex: 1; min-width: 160px; }
+  .waitlist-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold); font-size: 0.65rem;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 0.2rem 0.8rem; border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+
+  /* ── VIDEO HERO ── */
+  .hero-video {
+    position: absolute; inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video video {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100vw; height: 56.25vw;
+    min-height: 100vh; min-width: 177.77vh;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.22;
+  }
+  .hero-video-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.3) 50%, rgba(10,10,10,0.92) 100%);
+    z-index: 1;
+  }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item:first-child { grid-column: span 2; }
+    .form-row { grid-template-columns: 1fr; }
+    .slots-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- BARRA PRÓXIMO TURNO -->
+<div class="next-slot-bar" id="next-slot-bar">
+  ⏰ Próximo turno disponible hoy: <span id="next-slot-time">cargando...</span>
+  <a href="#citas" style="color:var(--gold-light);text-decoration:underline;font-size:0.7rem">Reservar →</a>
+</div>
+
+<!-- TOGGLE MODO OSCURO/CLARO -->
+<button class="theme-toggle" id="theme-toggle" title="Cambiar tema">🌙</button>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dorian<span>Barbershop</span></div>
+  <ul class="nav-links">
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#disponibilidad">Disponibilidad</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="https://wa.me/50664858716" target="_blank" class="nav-wa">💬 WhatsApp</a></li>
+    <li><a href="#citas" class="nav-cta">Reservar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/7697539/7697539-hd_1920_1080_30fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/7697085/7697085-hd_1920_1080_30fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/7424076/7424076-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">✦ 3 años de experiencia · Laberinto, Paquera ✦</p>
+    <h1 class="hero-title">
+      Dorian
+      <span class="gold">Barbershop</span>
+    </h1>
+    <p class="hero-subtitle">Precisión · Estilo · Confianza</p>
+    <div class="hero-btns">
+      <a href="#citas" class="btn-primary">Reservar Cita</a>
+      <a href="https://wa.me/50664858716" target="_blank" class="btn-outline" style="border-color:#25D366;color:#25D366">💬 WhatsApp</a>
+    </div>
+    <div style="margin-top:2.5rem;display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;align-items:center">
+      <div style="text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700">3+</div>
+        <div style="font-size:0.65rem;letter-spacing:2px;color:var(--gray);text-transform:uppercase">Años</div>
+      </div>
+      <div style="width:1px;height:40px;background:rgba(201,168,76,0.25)"></div>
+      <div style="text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700">15+</div>
+        <div style="font-size:0.65rem;letter-spacing:2px;color:var(--gray);text-transform:uppercase">Clientes/día</div>
+      </div>
+      <div style="width:1px;height:40px;background:rgba(201,168,76,0.25)"></div>
+      <div style="text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700">1,500+</div>
+        <div style="font-size:0.65rem;letter-spacing:2px;color:var(--gray);text-transform:uppercase">Clientes atendidos</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="container">
+    <div class="prices-header">
+      <span class="section-label">Nuestros servicios</span>
+      <h2 class="section-title">Precios & Servicios</h2>
+      <div class="section-line"></div>
+      <div style="display:inline-block;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);border-radius:4px;padding:0.7rem 1.5rem;font-size:0.78rem;color:var(--gold);letter-spacing:1px;margin-top:-1rem">
+        ✦ Arreglo de cejas incluido en todos los cortes sin costo adicional
+      </div>
+    </div>
+    <div class="prices-grid">
+      <div class="price-card reveal">
+        <span class="price-icon">✂️</span>
+        <div class="price-name">Corte Sencillo</div>
+        <p class="price-desc">Corte tradicional con acabado perfecto. Incluye arreglo de cejas sin costo adicional.</p>
+        <div class="price-amount">₡4,000 <span>CRC</span></div>
+        <div class="price-duration">⏱ 30–40 min · <span style="color:var(--gold)">✦ Cejas incluidas</span></div>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="featured-badge">Popular</div>
+        <span class="price-icon">👑</span>
+        <div class="price-name">Corte + Barba</div>
+        <p class="price-desc">Corte con arreglo de barba y navaja. Cejas incluidas sin costo adicional.</p>
+        <div class="price-amount">₡6,000 <span>CRC</span></div>
+        <div class="price-duration">⏱ 60–75 min · <span style="color:var(--gold)">✦ Cejas incluidas</span></div>
+      </div>
+      <div class="price-card reveal">
+        <span class="price-icon">🪒</span>
+        <div class="price-name">Arreglo de Barba</div>
+        <p class="price-desc">Perfilado, recorte y definición con navaja. Toalla caliente incluida.</p>
+        <div class="price-amount">₡4,000 <span>CRC</span></div>
+        <div class="price-duration">⏱ 20–30 min</div>
+      </div>
+      <div class="price-card reveal">
+        <span class="price-icon">⚡</span>
+        <div class="price-name">Fade + Diseño</div>
+        <p class="price-desc">Degradado profesional con diseño personalizado y líneas definidas.</p>
+        <div class="price-amount">₡7,500 <span>CRC</span></div>
+        <div class="price-duration">⏱ 45–60 min</div>
+      </div>
+      <div class="price-card reveal">
+        <span class="price-icon">👦</span>
+        <div class="price-name">Corte Niño</div>
+        <p class="price-desc">Para niños menores de 8 años. Corte cuidadoso y experiencia divertida. Cejas incluidas.</p>
+        <div class="price-amount">₡3,500 <span>CRC</span></div>
+        <div class="price-duration">⏱ 25–35 min · <span style="color:var(--gold)">✦ Cejas incluidas</span></div>
+        <div style="margin-top:0.5rem;font-size:0.65rem;color:#666;letter-spacing:1px">* Menores de 8 años</div>
+      </div>
+      <div class="price-card reveal">
+        <span class="price-icon">✨</span>
+        <div class="price-name">Experiencia VIP</div>
+        <p class="price-desc">Corte + barba + tratamiento capilar + masaje de cuero cabelludo.</p>
+        <div class="price-amount">₡14,000 <span>CRC</span></div>
+        <div class="price-duration">⏱ 90 min</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISPONIBILIDAD -->
+<section id="disponibilidad">
+  <div class="container">
+    <span class="section-label">Agenda en tiempo real</span>
+    <h2 class="section-title">Disponibilidad</h2>
+    <div class="section-line"></div>
+    <div class="availability-grid">
+      <div>
+        <div class="calendar-widget">
+          <div class="cal-header">
+            <button class="cal-nav" onclick="changeMonth(-1)">‹</button>
+            <div class="cal-month" id="cal-month-label"></div>
+            <button class="cal-nav" onclick="changeMonth(1)">›</button>
+          </div>
+          <div class="cal-days-header">
+            <span>Do</span><span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+        </div>
+      </div>
+
+      <div class="slots-panel">
+        <div class="slots-title" id="slots-date-title">Selecciona una fecha</div>
+        <div class="slot-legend">
+          <span><span class="legend-dot" style="background:var(--gold)"></span>Disponible</span>
+          <span><span class="legend-dot" style="background:#333"></span>Ocupado</span>
+        </div>
+        <div class="slots-grid" id="slots-grid">
+          <div style="color:var(--gray);font-size:0.8rem;grid-column:span 3;padding:1rem 0">
+            👆 Elige una fecha para ver los espacios disponibles
+          </div>
+        </div>
+
+        <!-- ESTADO DEL TURNO SELECCIONADO -->
+        <div id="slot-status" style="display:none;margin-bottom:1.5rem;border-radius:6px;padding:1rem 1.2rem;font-size:0.82rem;transition:all 0.3s"></div>
+
+        <a href="#citas" class="btn-primary" id="book-slot-btn" style="display:none;width:100%;text-align:center">
+          Reservar este espacio →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVAR CITA -->
+<section id="citas">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span class="section-label">Reserva tu espacio</span>
+      <h2 class="section-title">Agendar Cita</h2>
+      <div class="section-line" style="margin:0 auto 0"></div>
+    </div>
+    <div class="booking-form">
+      <div class="form-selected-info" id="selected-summary" style="display:none">
+        📅 Cita seleccionada: <span id="selected-summary-text"></span>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-input" id="f-nombre" placeholder="Tu nombre" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Teléfono / WhatsApp</label>
+          <input type="tel" class="form-input" id="f-tel" placeholder="+506 xxxx xxxx" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Servicio</label>
+        <select class="form-select" id="f-servicio">
+          <option value="">Selecciona un servicio</option>
+          <option value="Corte Sencillo — ₡4,000">Corte Sencillo — ₡4,000</option>
+          <option value="Corte + Barba — ₡6,000">Corte + Barba — ₡6,000</option>
+          <option value="Arreglo de Barba — ₡4,000">Arreglo de Barba — ₡4,000</option>
+          <option value="Fade + Diseño — ₡7,500">Fade + Diseño — ₡7,500</option>
+          <option value="Corte Niño (menor de 8 años) — ₡3,500">Corte Niño (menor de 8 años) — ₡3,500</option>
+          <option value="Experiencia VIP — ₡14,000">Experiencia VIP — ₡14,000</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Fecha</label>
+          <input type="date" class="form-input" id="f-fecha" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hora</label>
+          <select class="form-select" id="f-hora">
+            <option value="">Selecciona hora</option>
+            <option>8:00 AM</option><option>8:30 AM</option>
+            <option>9:00 AM</option><option>9:30 AM</option>
+            <option>10:00 AM</option><option>10:30 AM</option>
+            <option>11:00 AM</option><option>11:30 AM</option>
+            <option>1:00 PM</option><option>1:30 PM</option>
+            <option>2:00 PM</option><option>2:30 PM</option>
+            <option>3:00 PM</option><option>3:30 PM</option>
+            <option>4:00 PM</option><option>4:30 PM</option>
+            <option>5:00 PM</option><option>5:30 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nota (opcional)</label>
+        <input type="text" class="form-input" id="f-nota" placeholder="Alguna petición especial..." />
+      </div>
+      <button class="btn-primary" onclick="submitBooking()" style="width:100%;font-size:0.8rem;padding:1rem">
+        Confirmar Cita ✦
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="container">
+    <div class="gallery-header">
+      <span class="section-label">Nuestro trabajo</span>
+      <h2 class="section-title">Galería</h2>
+      <div class="section-line"></div>
+      <p style="color:var(--gray);font-size:0.85rem;max-width:500px">
+        Cada corte es una obra de arte. Aquí mostramos algunos de nuestros trabajos más recientes.
+      </p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80" alt="Fade Clásico" loading="lazy">
+        <div class="gallery-overlay">Fade Clásico</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80" alt="Corte Premium" loading="lazy">
+        <div class="gallery-overlay">Corte Premium</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&q=80" alt="Barba Perfecta" loading="lazy">
+        <div class="gallery-overlay">Barba Perfecta</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80" alt="Diseño Artístico" loading="lazy">
+        <div class="gallery-overlay">Diseño Artístico</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=500&q=80" alt="Experiencia VIP" loading="lazy">
+        <div class="gallery-overlay">Experiencia VIP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" style="background:var(--dark);padding:6rem 2rem">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <span class="section-label">Lo que dicen nuestros clientes</span>
+      <h2 class="section-title">Testimonios</h2>
+      <div class="section-line" style="margin:0 auto"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
+      <div style="background:var(--dark2);border:1px solid rgba(201,168,76,0.15);border-radius:8px;padding:2rem;position:relative">
+        <div style="color:var(--gold);font-size:1.5rem;margin-bottom:1rem">★★★★★</div>
+        <p style="color:var(--gray);font-size:0.85rem;line-height:1.7;margin-bottom:1.5rem">"El mejor corte que me he dado en Paquera. Dorian sabe lo que hace, muy profesional y el ambiente del lugar es increíble."</p>
+        <div style="display:flex;align-items:center;gap:0.8rem">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--black);font-size:0.9rem">JM</div>
+          <div>
+            <div style="color:var(--white);font-size:0.85rem;font-weight:600">José Mora</div>
+            <div style="color:var(--gray);font-size:0.7rem">Cliente frecuente</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--dark2);border:1px solid rgba(201,168,76,0.3);border-radius:8px;padding:2rem;background:linear-gradient(135deg,var(--dark2),rgba(201,168,76,0.06))">
+        <div style="color:var(--gold);font-size:1.5rem;margin-bottom:1rem">★★★★★</div>
+        <p style="color:var(--gray);font-size:0.85rem;line-height:1.7;margin-bottom:1.5rem">"Llevo a mi hijo desde que tenía 5 años, siempre sale feliz. Muy buena atención con los niños, paciente y rápido."</p>
+        <div style="display:flex;align-items:center;gap:0.8rem">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--black);font-size:0.9rem">MR</div>
+          <div>
+            <div style="color:var(--white);font-size:0.85rem;font-weight:600">María Rodríguez</div>
+            <div style="color:var(--gray);font-size:0.7rem">Mamá de cliente</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--dark2);border:1px solid rgba(201,168,76,0.15);border-radius:8px;padding:2rem">
+        <div style="color:var(--gold);font-size:1.5rem;margin-bottom:1rem">★★★★★</div>
+        <p style="color:var(--gray);font-size:0.85rem;line-height:1.7;margin-bottom:1.5rem">"El corte con barba quedó perfecto. Ya no me voy a otro lado, Dorian es el mejor barber de la zona sin duda."</p>
+        <div style="display:flex;align-items:center;gap:0.8rem">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--black);font-size:0.9rem">CA</div>
+          <div>
+            <div style="color:var(--white);font-size:0.85rem;font-weight:600">Carlos Arias</div>
+            <div style="color:var(--gray);font-size:0.7rem">Cliente frecuente</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIO Y UBICACIÓN -->
+<section id="ubicacion" style="background:var(--black);padding:6rem 2rem">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <span class="section-label">Dónde estamos</span>
+        <h2 class="section-title">Ubicación & Horario</h2>
+        <div class="section-line"></div>
+        <div style="display:flex;flex-direction:column;gap:1.2rem">
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <span style="font-size:1.3rem;margin-top:0.1rem">📍</span>
+            <div>
+              <div style="color:var(--white);font-weight:600;margin-bottom:0.2rem">Dirección</div>
+              <div style="color:var(--gray);font-size:0.85rem;line-height:1.6">Laberinto, Paquera<br>Puntarenas, Costa Rica</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <span style="font-size:1.3rem;margin-top:0.1rem">🕐</span>
+            <div>
+              <div style="color:var(--white);font-weight:600;margin-bottom:0.4rem">Horario</div>
+              <div style="color:var(--gray);font-size:0.85rem;line-height:1.9">
+                <span style="color:var(--gold)">Lunes</span> · 7:00 AM – 9:00 PM<br>
+                <span style="color:var(--gold)">Martes</span> · 7:00 AM – 9:00 PM<br>
+                <span style="color:#555;text-decoration:line-through">Miércoles · Cerrado</span><br>
+                <span style="color:var(--gold)">Jueves</span> · 7:00 AM – 9:00 PM<br>
+                <span style="color:var(--gold)">Viernes</span> · 7:00 AM – 9:00 PM<br>
+                <span style="color:var(--gold)">Sábado</span> · 7:00 AM – 9:00 PM<br>
+                <span style="color:var(--gold)">Domingo</span> · 7:00 AM – 9:00 PM
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <span style="font-size:1.3rem;margin-top:0.1rem">📞</span>
+            <div>
+              <div style="color:var(--white);font-weight:600;margin-bottom:0.2rem">Contacto</div>
+              <a href="https://wa.me/50664858716" target="_blank" style="color:#25D366;font-size:0.85rem;text-decoration:none">💬 +506 6485-8716 (WhatsApp)</a>
+            </div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Laberinto+Paquera+Puntarenas+Costa+Rica" target="_blank" class="btn-outline" style="margin-top:2rem;display:inline-block">Ver en Google Maps →</a>
+      </div>
+      <div style="background:var(--dark2);border:1px solid rgba(201,168,76,0.2);border-radius:8px;overflow:hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15720!2d-84.9!3d9.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e5e1c0c4c0c1%3A0x0!2sLaberinto%2C+Paquera%2C+Puntarenas!5e0!3m2!1ses!2scr!4v1"
+          width="100%" height="320" style="border:0;display:block;filter:grayscale(1) invert(0.9) contrast(0.9)"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTA DE ESPERA -->
+<section style="background:var(--black);padding:4rem 2rem">
+  <div class="container">
+    <div class="waitlist-section reveal">
+      <div class="waitlist-badge">Lista de espera</div>
+      <h3>¿Todo lleno? Anotate en la lista</h3>
+      <p>Si el horario está completo, dejá tu nombre y número. Te avisamos por WhatsApp cuando se libere un espacio.</p>
+      <div class="waitlist-form">
+        <input type="text" class="form-input" id="wl-nombre" placeholder="Tu nombre">
+        <input type="tel" class="form-input" id="wl-tel" placeholder="Tu WhatsApp (+506...)">
+        <button class="btn-primary" onclick="joinWaitlist()">Anotarme</button>
+      </div>
+      <div id="wl-list" style="margin-top:1.5rem"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM CTA -->
+<section style="background:var(--dark);padding:4rem 2rem;text-align:center;border-top:1px solid rgba(201,168,76,0.1)">
+  <div class="container">
+    <p style="font-size:0.7rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:0.8rem">Síguenos</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--white);margin-bottom:1rem">@dorian_sr_barber</h2>
+    <p style="color:var(--gray);font-size:0.85rem;margin-bottom:2rem">Mirá nuestros trabajos más recientes en Instagram</p>
+    <a href="https://instagram.com/dorian_sr_barber" target="_blank" class="btn-primary" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border:none">
+      📸 Ver en Instagram
+    </a>
+  </div>
+</section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/50664858716" target="_blank" class="wa-float">
+  <span>💬</span>
+  <span class="wa-float-label">Escribinos</span>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dorian Barbershop</div>
+  <p class="footer-tagline">Precisión · Estilo · Confianza</p>
+  <p style="color:var(--gray);font-size:0.75rem;margin-bottom:1.5rem">📍 Laberinto, Paquera, Puntarenas · 🕐 Lun–Dom (excepto Mié) 7am–9pm</p>
+  <ul class="footer-links">
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#disponibilidad">Disponibilidad</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#testimonios">Reseñas</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="#citas">Reservar</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Dorian Barbershop · Todos los derechos reservados</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <span class="modal-icon">✅</span>
+    <div class="modal-title">¡Cita Confirmada!</div>
+    <div class="modal-body" id="modal-body">Tu cita ha sido agendada con éxito.</div>
+    <button class="btn-primary" onclick="closeModal()" style="width:100%">Perfecto, gracias</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CALENDAR ──
+const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const today = new Date();
+let currentYear = today.getFullYear();
+let currentMonth = today.getMonth();
+let selectedDate = null;
+let selectedSlot = null;
+
+// ── API URL ── (cambiar si el servidor corre en otro puerto/dominio)
+const API = 'https://dorian-server-production.up.railway.app';
+
+// ── CITAS CON NEON ──
+async function getOcupadas(fecha) {
+  try {
+    const res = await fetch(`${API}/citas?fecha=${fecha}`);
+    const data = await res.json();
+    return data.ocupadas || [];
+  } catch (e) {
+    console.warn('No se pudo conectar al servidor:', e);
+    return [];
+  }
+}
+
+async function reservarCita(datos) {
+  const res = await fetch(`${API}/citas`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(datos)
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Error al reservar');
+  return data;
+}
+
+async function guardarEspera(nombre, telefono) {
+  const res = await fetch(`${API}/espera`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre, telefono })
+  });
+  return res.json();
+}
+
+const allSlots = [
+  '7:00 AM','7:30 AM','8:00 AM','8:30 AM','9:00 AM','9:30 AM',
+  '10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM',
+  '1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM',
+  '4:00 PM','4:30 PM','5:00 PM','5:30 PM','6:00 PM','6:30 PM',
+  '7:00 PM','7:30 PM','8:00 PM','8:30 PM'
+];
+
+function isClosed(dateObj) {
+  // Closed on Wednesday (3) and after 9pm today
+  const isWed = dateObj.getDay() === 3;
+  const isToday = dateObj.toDateString() === today.toDateString();
+  const afterHours = isToday && today.getHours() >= 21;
+  return isWed || afterHours;
+}
+
+function slotToHour(slot) {
+  const [time, period] = slot.split(' ');
+  let [h, m] = time.split(':').map(Number);
+  if (period === 'PM' && h !== 12) h += 12;
+  if (period === 'AM' && h === 12) h = 0;
+  return h + m / 60;
+}
+
+function renderCalendar() {
+  document.getElementById('cal-month-label').textContent = MONTHS[currentMonth] + ' ' + currentYear;
+  const grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+
+  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const el = document.createElement('div');
+    el.className = 'cal-day empty';
+    grid.appendChild(el);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const el = document.createElement('div');
+    el.className = 'cal-day';
+    el.textContent = d;
+
+    const thisDate = new Date(currentYear, currentMonth, d);
+    const isToday = thisDate.toDateString() === today.toDateString();
+    const isPast = thisDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const closed = isClosed(thisDate);
+    const isWed = thisDate.getDay() === 3;
+
+    if (isToday) el.classList.add('today');
+
+    if (isPast || closed) {
+      el.classList.add('past');
+      if (isWed) { el.classList.add('closed-wed'); el.title = 'Cerrado los miércoles'; }
+      if (isToday && today.getHours() >= 21) el.title = 'Fuera de horario';
+    } else {
+      el.addEventListener('click', () => selectDate(d));
+    }
+
+    if (selectedDate &&
+        selectedDate.d === d &&
+        selectedDate.m === currentMonth &&
+        selectedDate.y === currentYear) {
+      el.classList.add('selected');
+    }
+
+    grid.appendChild(el);
+  }
+}
+
+function selectDate(d) {
+  selectedDate = { d, m: currentMonth, y: currentYear };
+  selectedSlot = null;
+  renderCalendar();
+  renderSlots();
+}
+
+async function renderSlots() {
+  const grid = document.getElementById('slots-grid');
+  const title = document.getElementById('slots-date-title');
+  const btn = document.getElementById('book-slot-btn');
+  const status = document.getElementById('slot-status');
+  grid.innerHTML = '';
+  btn.style.display = 'none';
+  status.style.display = 'none';
+
+  if (!selectedDate) return;
+
+  const selDateObj = new Date(selectedDate.y, selectedDate.m, selectedDate.d);
+  const dateStr = `${selectedDate.d} de ${MONTHS[selectedDate.m]}`;
+  title.textContent = 'Espacios para el ' + dateStr;
+
+  // Check if Wednesday
+  if (selDateObj.getDay() === 3) {
+    grid.innerHTML = `<div style="color:#e07070;font-size:0.82rem;grid-column:span 3;padding:1rem 0;background:rgba(220,50,50,0.08);border:1px solid rgba(220,50,50,0.25);border-radius:6px;padding:1rem;text-align:center">
+      🚫 Los miércoles no hay servicio.<br><span style="color:var(--gray);font-size:0.75rem">Elegí otro día.</span></div>`;
+    return;
+  }
+
+  const isToday = selDateObj.toDateString() === today.toDateString();
+  const nowHour = today.getHours() + today.getMinutes() / 60;
+  const fechaStr = `${selectedDate.y}-${String(selectedDate.m+1).padStart(2,'0')}-${String(selectedDate.d).padStart(2,'0')}`;
+
+  // Show loading
+  grid.innerHTML = `<div style="color:var(--gray);font-size:0.8rem;grid-column:span 3;padding:1rem 0;text-align:center">⏳ Cargando disponibilidad...</div>`;
+
+  // If today after 9pm
+  if (isToday && today.getHours() >= 21) {
+    grid.innerHTML = `<div style="color:#e07070;font-size:0.82rem;grid-column:span 3;background:rgba(220,50,50,0.08);border:1px solid rgba(220,50,50,0.25);border-radius:6px;padding:1rem;text-align:center">
+      🌙 Ya cerramos por hoy.<br><span style="color:var(--gray);font-size:0.75rem">Reservá para mañana u otro día.</span></div>`;
+    return;
+  }
+
+  // Fetch real taken slots from Neon
+  const ocupadas = await getOcupadas(fechaStr);
+  grid.innerHTML = '';
+
+  allSlots.forEach((slot) => {
+    const slotHour = slotToHour(slot);
+    if (isToday && slotHour <= nowHour + 0.5) return;
+
+    const isTaken = ocupadas.includes(slot);
+    const el = document.createElement('div');
+    el.className = 'slot' + (isTaken ? ' taken' : '');
+    el.textContent = slot;
+    if (isTaken) {
+      el.addEventListener('click', () => showSlotStatus(slot, true));
+    } else {
+      el.addEventListener('click', () => selectSlot(slot, el));
+    }
+    grid.appendChild(el);
+  });
+
+  if (grid.children.length === 0) {
+    grid.innerHTML = `<div style="color:#e07070;font-size:0.82rem;grid-column:span 3;background:rgba(220,50,50,0.08);border:1px solid rgba(220,50,50,0.25);border-radius:6px;padding:1rem;text-align:center">
+      😔 No quedan espacios disponibles.<br><span style="color:var(--gray);font-size:0.75rem">Elegí otro día o anotate en la lista de espera.</span></div>`;
+  }
+}
+
+function showSlotStatus(slot, taken) {
+  const status = document.getElementById('slot-status');
+  status.style.display = 'block';
+  if (taken) {
+    status.style.background = 'rgba(220,50,50,0.1)';
+    status.style.border = '1px solid rgba(220,50,50,0.35)';
+    status.style.color = '#e07070';
+    status.innerHTML = `❌ <strong style="color:#f08080">Las ${slot}</strong> ya está ocupada — elegí otra hora disponible.`;
+    document.getElementById('book-slot-btn').style.display = 'none';
+  } else {
+    status.style.background = 'rgba(37,211,102,0.08)';
+    status.style.border = '1px solid rgba(37,211,102,0.3)';
+    status.style.color = '#5dd68c';
+    status.innerHTML = `✅ <strong style="color:#7ee8a2">Las ${slot}</strong> está disponible — hacé clic en "Reservar este espacio".`;
+  }
+}
+
+function selectSlot(slot, el) {
+  document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedSlot = slot;
+
+  showSlotStatus(slot, false);
+
+  const btn = document.getElementById('book-slot-btn');
+  btn.style.display = 'block';
+
+  // Pre-fill the booking form
+  const d = selectedDate;
+  const dateValue = `${d.y}-${String(d.m+1).padStart(2,'0')}-${String(d.d).padStart(2,'0')}`;
+  document.getElementById('f-fecha').value = dateValue;
+  document.getElementById('f-hora').value = slot;
+
+  const summary = document.getElementById('selected-summary');
+  const summaryText = document.getElementById('selected-summary-text');
+  summary.style.display = 'block';
+  summaryText.textContent = `${d.d} de ${MONTHS[d.m]}, ${d.y} a las ${slot}`;
+}
+
+function changeMonth(dir) {
+  currentMonth += dir;
+  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+  if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+  renderCalendar();
+}
+
+renderCalendar();
+
+async function submitBooking() {
+  const nombre = document.getElementById('f-nombre').value.trim();
+  const tel = document.getElementById('f-tel').value.trim();
+  const servicio = document.getElementById('f-servicio').value;
+  const fecha = document.getElementById('f-fecha').value;
+  const hora = document.getElementById('f-hora').value;
+  const nota = document.getElementById('f-nota').value.trim();
+
+  if (!nombre || !tel || !servicio || !fecha || !hora) {
+    showToast('⚠️ Por favor completa todos los campos requeridos');
+    return;
+  }
+
+  const btnSubmit = document.querySelector('#citas .btn-primary');
+  btnSubmit.textContent = 'Guardando...';
+  btnSubmit.disabled = true;
+
+  try {
+    await reservarCita({ nombre, telefono: tel, servicio, fecha, hora, nota });
+
+    const fechaDisplay = new Date(fecha + 'T12:00:00').toLocaleDateString('es-CR', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    document.getElementById('modal-body').innerHTML =
+      `<strong>${nombre}</strong>, tu cita está confirmada.<br><br>` +
+      `📅 <strong>${fechaDisplay}</strong><br>` +
+      `🕐 <strong>${hora}</strong><br>` +
+      `✂️ <strong>${servicio}</strong><br><br>` +
+      `Te esperamos en Dorian Barbershop. ¡Recuerda llegar 5 minutos antes!`;
+
+    document.getElementById('modal').classList.add('active');
+    renderSlots();
+
+    // Enviar WhatsApp al barbero
+    const notaTexto = nota ? `%0A📝 Nota: ${nota}` : '';
+    const mensaje = `🔔 *Nueva cita en Dorian Barbershop*%0A%0A👤 *Cliente:* ${nombre}%0A📞 *Teléfono:* ${tel}%0A✂️ *Servicio:* ${servicio}%0A📅 *Fecha:* ${fechaDisplay}%0A🕐 *Hora:* ${hora}${notaTexto}`;
+    setTimeout(() => window.open(`https://wa.me/50664858716?text=${mensaje}`, '_blank'), 1000);
+
+  } catch (err) {
+    if (err.message === 'Esa hora ya está ocupada') {
+      showToast('❌ Esa hora ya fue reservada. Elegí otra hora.');
+      renderSlots();
+    } else {
+      showToast('⚠️ Error al conectar con el servidor. Intentá de nuevo.');
+    }
+  } finally {
+    btnSubmit.textContent = 'Confirmar Cita';
+    btnSubmit.disabled = false;
+  }
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  // Reset form
+  ['f-nombre','f-tel','f-nota'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('f-servicio').value = '';
+  document.getElementById('f-fecha').value = '';
+  document.getElementById('f-hora').value = '';
+  document.getElementById('selected-summary').style.display = 'none';
+  showToast('✅ ¡Cita agendada con éxito!');
+}
+
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// Set min date for date picker
+const minDate = today.toISOString().split('T')[0];
+document.getElementById('f-fecha').min = minDate;
+
+// ── PRÓXIMO TURNO DISPONIBLE ──
+(function() {
+  const now = new Date();
+  const day = now.getDay(); // 0=dom, 3=mié
+  const hour = now.getHours();
+  const slots = ['7:00 AM','7:30 AM','8:00 AM','8:30 AM','9:00 AM','9:30 AM',
+    '10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM',
+    '1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM',
+    '4:00 PM','4:30 PM','5:00 PM','5:30 PM','6:00 PM','6:30 PM',
+    '7:00 PM','7:30 PM','8:00 PM','8:30 PM'];
+  const el = document.getElementById('next-slot-time');
+  if (day === 3) { // miércoles cerrado
+    el.textContent = 'Cerrado hoy (miércoles) · Abrimos mañana a las 7:00 AM';
+    return;
+  }
+  if (hour >= 21) {
+    el.textContent = 'Cerrado · Abrimos mañana a las 7:00 AM';
+    return;
+  }
+  // Find next slot after current hour
+  const nextSlot = slots.find(s => {
+    const [time, period] = s.split(' ');
+    let [h] = time.split(':').map(Number);
+    if (period === 'PM' && h !== 12) h += 12;
+    if (period === 'AM' && h === 12) h = 0;
+    return h > hour;
+  });
+  el.textContent = nextSlot ? nextSlot : '8:00 AM mañana';
+})();
+
+// ── MODO OSCURO / CLARO ──
+const themeBtn = document.getElementById('theme-toggle');
+let isLight = false;
+themeBtn.addEventListener('click', () => {
+  isLight = !isLight;
+  document.body.classList.toggle('light-mode', isLight);
+  themeBtn.textContent = isLight ? '🌑' : '🌙';
+  localStorage.setItem('dorian-theme', isLight ? 'light' : 'dark');
+});
+// Restore theme
+if (localStorage.getItem('dorian-theme') === 'light') {
+  isLight = true;
+  document.body.classList.add('light-mode');
+  themeBtn.textContent = '🌑';
+}
+
+// ── SCROLL ANIMATIONS ──
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+// ── LISTA DE ESPERA ──
+let waitlist = JSON.parse(localStorage.getItem('dorian-waitlist') || '[]');
+
+async function joinWaitlist() {
+  const nombre = document.getElementById('wl-nombre').value.trim();
+  const tel = document.getElementById('wl-tel').value.trim();
+  if (!nombre || !tel) { showToast('⚠️ Ingresá tu nombre y número'); return; }
+
+  try {
+    await guardarEspera(nombre, tel);
+    document.getElementById('wl-nombre').value = '';
+    document.getElementById('wl-tel').value = '';
+    showToast('✅ ¡Te anotamos! Te avisamos por WhatsApp cuando haya espacio.');
+    const msg = `📋 *Lista de espera - Dorian Barbershop*%0A%0A👤 *${nombre}*%0A📞 ${tel}`;
+    setTimeout(() => window.open(`https://wa.me/50664858716?text=${msg}`, '_blank'), 800);
+  } catch(e) {
+    showToast('⚠️ Error al anotarte. Intentá de nuevo.');
+  }
+}
+
+function renderWaitlist() {
+  const container = document.getElementById('wl-list');
+  if (waitlist.length === 0) { container.innerHTML = ''; return; }
+  container.innerHTML = `
+    <div style="font-size:0.72rem;color:var(--gray);margin-bottom:0.6rem;letter-spacing:1px">EN LISTA:</div>
+    ${waitlist.map((w,i) => `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid rgba(201,168,76,0.1);font-size:0.8rem">
+        <span>👤 <strong style="color:var(--white)">${w.nombre}</strong> <span style="color:var(--gray);font-size:0.7rem">· ${w.hora}</span></span>
+        <button onclick="removeWaitlist(${i})" style="background:none;border:none;color:#555;cursor:pointer;font-size:0.8rem">✕</button>
+      </div>`).join('')}
+  `;
+}
+
+function removeWaitlist(i) {
+  waitlist.splice(i, 1);
+  localStorage.setItem('dorian-waitlist', JSON.stringify(waitlist));
+  renderWaitlist();
+}
+
+renderWaitlist();
+</script>
+</body>
+</html>
